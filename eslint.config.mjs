@@ -9,7 +9,7 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: [".agents", ".obsidian"],
+    ignores: [".agents/**", ".obsidian/**"],
   },
   {
     files: ["**/*.{js,mjs,cjs}"],
