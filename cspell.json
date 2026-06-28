@@ -4,7 +4,7 @@
   "language": "en",
   "import": ["@cspell/dict-software-terms/cspell-ext.json"],
   "allowCompoundWords": true,
-  "ignorePaths": ["*-lock.{json,yaml}", ".gitignore"],
+  "ignorePaths": ["*-lock.{json,yaml}", "pnpm-lock.yaml", ".gitignore"],
   "ignoreRegExpList": ["Email", "Urls", "Base64", "string"],
   "ignoreWords": ["commitlintrc"],
   "useGitignore": true,
