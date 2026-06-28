@@ -34,7 +34,7 @@ jobs:
         id: lychee
         with:
           fail: false
-      - uses: marocchino/sticky-pull-request-comment@v2
+      - uses: marocchino/sticky-pull-request-comment@v3
         if: ${{ always() && github.event_name == 'pull_request' && steps.lychee.outcome == 'success' }}
         with:
           path: lychee/out.md
