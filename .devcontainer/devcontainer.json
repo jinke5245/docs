@@ -36,6 +36,9 @@
     "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin",
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
   },
+  "initializeCommand": {
+    "script": "bash -x .devcontainer/scripts/initialize-command.sh"
+  },
   "onCreateCommand": {
     "script": "bash -x .devcontainer/scripts/on-create-command.sh"
   },
