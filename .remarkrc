@@ -1,0 +1,4 @@
+{
+  "plugins": ["remark-gfm", "remark-preset-lint-recommended"],
+  "settings": {}
+}

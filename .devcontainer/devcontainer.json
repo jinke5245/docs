@@ -1,0 +1,56 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
+  "mounts": [
+    {
+      "source": "devcontainer-pnpm-store",
+      "target": "${containerWorkspaceFolder}/.pnpm-store",
+      "type": "volume"
+    },
+    {
+      "source": "${localWorkspaceFolderBasename}-node-modules",
+      "target": "${containerWorkspaceFolder}/node_modules",
+      "type": "volume"
+    },
+    {
+      "source": "${localEnv:HOME}/.codex",
+      "target": "/home/vscode/.codex",
+      "type": "bind"
+    }
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "22",
+      "pnpmVersion": "11.9.0"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "toolsToInstall": "uv, ruff"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {}
+  },
+  "containerEnv": {
+    "PNPM_STORE_DIR": "${containerWorkspaceFolder}/.pnpm-store",
+    "UV_LINK_MODE": "copy"
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin",
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "onCreateCommand": {
+    "script": "bash -x .devcontainer/scripts/on-create-command.sh"
+  },
+  "postCreateCommand": {
+    "script": "bash -x .devcontainer/scripts/post-create-command.sh"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "davidanson.vscode-markdownlint",
+        "charliermarsh.ruff",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {}
+    }
+  }
+}

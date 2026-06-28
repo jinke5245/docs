@@ -1,0 +1,23 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    ".commitlintrc": "json",
+    ".prettierignore": "ignore",
+    ".prettierrc": "json",
+    ".remarkignore": "ignore",
+    ".remarkrc": "json"
+  },
+  "files.insertFinalNewline": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://raw.githubusercontent.com/": true
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [".remarkrc"],
+      "url": "https://json.schemastore.org/remarkrc.json"
+    }
+  ]
+}

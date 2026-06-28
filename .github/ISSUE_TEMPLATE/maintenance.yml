@@ -1,0 +1,73 @@
+name: Maintenance
+description: Track upkeep for scripts, CI, templates, checks, dependencies, or configuration.
+title: "chore: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for repository upkeep: scripts, CI, templates, lint rules,
+        dependencies, Obsidian configuration, or other docs-as-code maintenance.
+
+  - type: checkboxes
+    id: areas
+    attributes:
+      label: Areas
+      description: Optional. Select any maintenance areas this issue may touch.
+      options:
+        - label: Scripts
+        - label: CI
+        - label: GitHub templates
+        - label: Checks and linting
+        - label: Dependencies
+        - label: Obsidian configuration
+        - label: Repository structure
+        - label: Other
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background
+      description: Describe what needs upkeep and why it matters.
+      placeholder: Include related paths, logs, check output, examples, or references.
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals
+      description: Describe the maintenance outcome and intended scope.
+      placeholder: |
+        - Update ...
+        - Simplify ...
+        - Make ... consistent
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List observable conditions that must be true before this issue is complete.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: List checks that should be run, or explain why no check is needed.
+      placeholder: "pnpm check / pnpm lint:markdown / pnpm format:check / ..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Add constraints, timing concerns, compatibility notes, or follow-up ideas.
+    validations:
+      required: false
