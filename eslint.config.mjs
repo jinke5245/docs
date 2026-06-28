@@ -33,6 +33,9 @@ export default defineConfig([
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
+    languageOptions: {
+      frontmatter: "yaml",
+    },
     extends: ["markdown/recommended"],
   },
   prettier,

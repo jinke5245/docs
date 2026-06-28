@@ -5,7 +5,13 @@
   "import": ["@cspell/dict-software-terms/cspell-ext.json"],
   "allowCompoundWords": true,
   "ignorePaths": ["*-lock.{json,yaml}", "pnpm-lock.yaml", ".gitignore"],
-  "ignoreRegExpList": ["Email", "Urls", "Base64", "string"],
+  "patterns": [
+    {
+      "name": "HanCharacters",
+      "pattern": "/[\\u3400-\\u4DBF\\u4E00-\\u9FFF\\uF900-\\uFAFF]+/g"
+    }
+  ],
+  "ignoreRegExpList": ["Email", "Urls", "Base64", "string", "HanCharacters"],
   "ignoreWords": ["commitlintrc"],
   "useGitignore": true,
   "words": ["jinke", "MOCs"]
