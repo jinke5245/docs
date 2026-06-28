@@ -1,4 +1,4 @@
-import { access, rm, writeFile } from "node:fs/promises";
+import { access } from "node:fs/promises";
 import { constants } from "node:fs";
 import { spawnSync } from "node:child_process";
 
@@ -14,9 +14,15 @@ if (
 }
 
 try {
-  await access(".git", constants.F_OK);
-  await writeFile(".git/config.lock", "");
-  await rm(".git/config.lock", { force: true });
+  const gitDir = spawnSync("git", ["rev-parse", "--git-dir"], {
+    encoding: "utf8",
+  });
+
+  if (gitDir.status !== 0) {
+    process.exit(0);
+  }
+
+  await access(gitDir.stdout.trim(), constants.W_OK);
 } catch {
   process.exit(0);
 }
