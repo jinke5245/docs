@@ -1,0 +1,36 @@
+name: Content
+description: Capture, organize, revise, or package knowledge content.
+title: "docs: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for knowledge work: collecting material, organizing notes,
+        revising content, updating MOCs, or shaping an OKF knowledge package.
+        A clear title is enough when the work is simple.
+
+  - type: checkboxes
+    id: areas
+    attributes:
+      label: Areas
+      description: Optional. Select any areas this issue may touch.
+      options:
+        - label: Inbox capture
+        - label: Project notes
+        - label: Personal notes
+        - label: Library material
+        - label: MOC navigation
+        - label: OKF knowledge package
+        - label: Cross-directory organization
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Optional. Add source links, related notes, rough intent, constraints, or follow-up ideas.
+      placeholder: |
+        - Source:
+        - Related notes:
+        - Rough intent:
+    validations:
+      required: false

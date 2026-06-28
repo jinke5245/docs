@@ -1,0 +1,5 @@
+.agents/
+.husky/_/
+.obsidian/
+.gitignore
+*-lock.*
