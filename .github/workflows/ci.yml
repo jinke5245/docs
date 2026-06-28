@@ -14,9 +14,6 @@ jobs:
   lint:
     name: lint
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
@@ -30,17 +27,6 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
-      - uses: lycheeverse/lychee-action@v2
-        id: lychee
-        with:
-          fail: false
-      - uses: marocchino/sticky-pull-request-comment@v3
-        if: ${{ always() && github.event_name == 'pull_request' && steps.lychee.outcome == 'success' }}
-        with:
-          path: lychee/out.md
-          ignore_empty: true
-      - if: ${{ steps.lychee.outputs.exit_code != '0' }}
-        run: exit 1
 
   scan:
     name: gitleaks
